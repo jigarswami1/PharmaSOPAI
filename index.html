@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmaSOP AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="auth-template">
+    <div class="auth-shell">
+      <div class="card auth-card">
+        <h1>PharmaSOP AI</h1>
+        <p class="subtle">GMP-compliant SOP generation platform for regulated pharmaceutical environments.</p>
+        <div class="tabs">
+          <button data-auth-tab="login" class="tab active">Login</button>
+          <button data-auth-tab="register" class="tab">Register</button>
+        </div>
+        <form id="auth-form" class="stack">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" minlength="6" required /></label>
+          <label id="name-field" class="hidden">Full Name<input type="text" name="name" /></label>
+          <button type="submit" class="btn primary">Continue</button>
+        </form>
+        <p id="auth-message" class="message"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="main-template">
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>PharmaSOP AI</h2>
+        <nav>
+          <button class="nav-item active" data-view="dashboard">Dashboard</button>
+          <button class="nav-item" data-view="generator">SOP Generator</button>
+          <button class="nav-item" data-view="templates">SOP Templates Library</button>
+          <button class="nav-item" data-view="documents">My SOP Documents</button>
+          <button class="nav-item" data-view="settings">Account Settings</button>
+        </nav>
+        <button id="logout-btn" class="btn ghost">Logout</button>
+      </aside>
+      <main class="content" id="view-root"></main>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
